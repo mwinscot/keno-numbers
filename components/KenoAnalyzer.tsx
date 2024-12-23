@@ -86,7 +86,7 @@ export default function KenoAnalyzer() {
         leastFrequent, 
         mostFrequent, 
         totalDraws: drawCount,
-        allDraws: allDraws.reverse() // Most recent first
+        allDraws: allDraws // Keep the order as is
       });
     } catch (err) {
       console.error('Error:', err);
@@ -176,7 +176,7 @@ export default function KenoAnalyzer() {
             <div className="mt-4">
               <h2 className="font-semibold mb-2 text-black">Recent Draws:</h2>
               <div className="max-h-60 overflow-y-auto">
-                {results.allDraws.map((draw, index) => (
+                {results.allDraws.slice().reverse().map((draw, index) => ( // Reverse the order here
                   <div key={index} className="bg-gray-100 p-2 rounded mb-2 text-sm text-black">
                     {draw.join(' ')}
                   </div>
