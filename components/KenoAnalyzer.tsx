@@ -127,6 +127,12 @@ export default function KenoAnalyzer() {
           </div>
         </label>
 
+        <div className="text-center mt-2">
+          <a href="https://www.oregonlottery.org/keno/winning-numbers/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+            View Oregon Lottery Keno Winning Numbers
+          </a>
+        </div>
+
         {loading && (
           <div className="mt-4 text-center text-gray-600">Processing...</div>
         )}
@@ -143,7 +149,7 @@ export default function KenoAnalyzer() {
                 {results.mostFrequent.map(([number, count]) => (
                   <div key={number} className="bg-green-100 p-2 rounded text-center">
                     <div className="font-bold">{number}</div>
-                    <div className="text-sm text-gray-600">{count} times</div>
+                    <div className="text-sm text-gray-600">{count} times ({Math.round((count / results.totalDraws) * 100)}%)</div>
                   </div>
                 ))}
               </div>
@@ -158,7 +164,7 @@ export default function KenoAnalyzer() {
                 {results.leastFrequent.map(([number, count]) => (
                   <div key={number} className="bg-red-100 p-2 rounded text-center">
                     <div className="font-bold">{number}</div>
-                    <div className="text-sm text-gray-600">{count} times</div>
+                    <div className="text-sm text-gray-600">{count} times ({Math.round((count / results.totalDraws) * 100)}%)</div>
                   </div>
                 ))}
               </div>
