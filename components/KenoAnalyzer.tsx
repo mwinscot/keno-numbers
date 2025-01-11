@@ -180,21 +180,19 @@ const KenoAnalyzer = () => {
           <h2 className="text-2xl font-bold text-center mb-6">Oregon Keno Analyzer</h2>
           
           <div>
-            <div 
-              className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer"
-              onClick={() => fileInputRef.current?.click()}
+            <label 
+              className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer block hover:border-gray-400"
             >
               <Upload className="w-8 h-8 mx-auto mb-2 text-gray-500" />
-              <p className="text-sm text-gray-600">Upload Keno Results File</p>
-              <p className="text-xs text-gray-500 mt-1">Accepts .txt or .csv files</p>
+              <span className="text-sm text-gray-600 block">Upload Keno Results File</span>
+              <span className="text-xs text-gray-500 mt-1 block">Accepts .txt or .csv files</span>
               <input
                 type="file"
                 onChange={handleUpload}
                 className="hidden"
-                ref={fileInputRef}
                 accept=".txt,.csv"
               />
-            </div>
+            </label>
 
             {error && (
               <div className="mt-4 text-red-500 text-center">
