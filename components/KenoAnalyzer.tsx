@@ -24,7 +24,7 @@ interface KenoGame {
 
 const KenoAnalyzer = () => {
   const [error, setError] = useState('');
-  const [gameData, setGameData] = useState<KenoGame[]>([]);
+  const [_, setGameData] = useState<KenoGame[]>([]);
   const [analyses, setAnalyses] = useState<GameAnalysis[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -87,7 +87,7 @@ const KenoAnalyzer = () => {
     try {
       const text = await file.text();
       const lines = text.split('\n').filter(line => line.trim());
-      const headers = ["Date", "Time", "Draw", "Winning Numbers", "BullsEye", "Multiplier", "Bonus8"];
+      // Parse each line into a game object
       
       const games = lines.map(line => {
         const parts = line.split(/\s+/);
