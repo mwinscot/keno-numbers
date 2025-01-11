@@ -24,7 +24,6 @@ interface KenoGame {
 
 const KenoAnalyzer = () => {
   const [error, setError] = useState('');
-  const [_, setGameData] = useState<KenoGame[]>([]);
   const [analyses, setAnalyses] = useState<GameAnalysis[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -117,7 +116,6 @@ const KenoAnalyzer = () => {
         return game as KenoGame;
       });
 
-      setGameData(games);
       analyzeGames(games);
       setError('');
     } catch (err) {
