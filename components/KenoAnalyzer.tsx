@@ -25,7 +25,6 @@ interface KenoGame {
 const KenoAnalyzer = () => {
   const [error, setError] = useState('');
   const [analyses, setAnalyses] = useState<GameAnalysis[]>([]);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const parseGameNumbers = (numbersStr: string): number[] => {
     return numbersStr.split(' ')
