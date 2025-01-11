@@ -96,7 +96,7 @@ export default function Home() {
                 <div className="space-y-2">
                   <h3 className="font-semibold">Least Frequent Numbers:</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    {results.leastFrequent.map(([number, count], index) => (
+                    {results.leastFrequent.map(([number, count]) => (
                       <div key={number} className="bg-gray-100 p-2 rounded">
                         <span className="font-bold">#{number}</span>: {count} times
                       </div>
